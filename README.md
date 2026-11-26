@@ -16,7 +16,7 @@ La función recibe los siguientes parámetros:
 
 **Código de implementación:**
 
-[Aquí colocar el fragmento de código de procesarMensaje].
+<img width="742" height="460" alt="image" src="https://github.com/user-attachments/assets/76495b4a-f3f3-4441-ab08-37374c17fe25" />
 
 ### 1.2. Transformación mediante map
 
