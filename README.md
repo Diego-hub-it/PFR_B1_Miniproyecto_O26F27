@@ -26,7 +26,8 @@ Mediante este enfoque funcional se genera una nueva cadena con los caracteres tr
 
 **Código de implementación:**
 
-[Aquí colocar la línea de código donde se utiliza map].
+<img width="622" height="106" alt="image" src="https://github.com/user-attachments/assets/b3f1c881-6e9f-4c89-a6fd-c6c126ef862a" />
+
 
 ### 1.3. Implementación de los algoritmos de cifrado
 
@@ -38,7 +39,9 @@ Se desarrollaron dos funciones independientes:
 
 **Código de implementación:**
 
-[Aquí colocar los fragmentos de código de cifradoCesar y cifradoXOR].
+<img width="712" height="632" alt="image" src="https://github.com/user-attachments/assets/556657ba-1d7d-4b5f-b1b3-8fd78d08bf04" />
+
+<img width="702" height="735" alt="image" src="https://github.com/user-attachments/assets/f87cb3e4-64c1-482d-840e-fb701996c1c1" />
 
 ---
 
@@ -68,11 +71,11 @@ Para recuperar el mensaje original se vuelve a procesar el texto cifrado utiliza
 
 **Código de implementación:**
 
-[Aquí colocar el fragmento de código de la prueba César].
+<img width="732" height="815" alt="image" src="https://github.com/user-attachments/assets/0491cb15-2889-45f5-87f2-e8021adfe11a" />
 
 **Captura de ejecución:**
 
-[Aquí insertar la captura de pantalla que demuestra el cifrado y descifrado César].
+<img width="420" height="122" alt="image" src="https://github.com/user-attachments/assets/55d34925-a558-4a22-b39b-86e9a2fb5981" />
 
 ## 2.2. Caso XOR (Lógico)
 
