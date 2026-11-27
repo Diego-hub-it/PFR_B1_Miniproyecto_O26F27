@@ -110,7 +110,7 @@ Esto es posible porque XOR posee la propiedad de ser su propia operación invers
 
 **Código de implementación:**
 
-[Aquí colocar el fragmento de código de la prueba XOR].
+<img width="717" height="820" alt="image" src="https://github.com/user-attachments/assets/47f07398-3b77-414c-a341-a8e3666fa041" />
 
 **Captura de ejecución:**
 
