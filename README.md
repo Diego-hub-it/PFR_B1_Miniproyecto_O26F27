@@ -114,7 +114,7 @@ Esto es posible porque XOR posee la propiedad de ser su propia operación invers
 
 **Captura de ejecución:**
 
-[Aquí insertar la captura de pantalla que demuestra el cifrado y descifrado XOR].
+<img width="402" height="120" alt="image" src="https://github.com/user-attachments/assets/3a53fc8f-2664-4d59-811a-0741876671b8" />
 
 ---
 
@@ -149,7 +149,8 @@ Las pruebas realizadas fueron:
 
 **Código de implementación:**
 
-[Aquí colocar el fragmento de código de validación de claves].
+<img width="565" height="152" alt="image" src="https://github.com/user-attachments/assets/afc6b2da-9c9e-4c8f-a93a-cc86ebf72370" />
+<img width="497" height="331" alt="image" src="https://github.com/user-attachments/assets/541d25e9-39ca-463f-8e64-cfde742140cf" />
 
 ### 3.3. Validación de caracteres no soportados
 
@@ -160,7 +161,8 @@ También se realizaron pruebas utilizando caracteres que no cumplen las condicio
 
 **Código de implementación:**
 
-[Aquí colocar los fragmentos de código de validación de caracteres].
+<img width="490" height="147" alt="image" src="https://github.com/user-attachments/assets/4a2129b9-fb34-4cc9-b5dd-41337d6f5785" />
+<img width="497" height="182" alt="image" src="https://github.com/user-attachments/assets/3d3ba70b-2385-4c02-aa29-729cc2ae1a45" />
 
 ### 3.4. Resultados de las pruebas de errores
 
@@ -168,13 +170,60 @@ Las pruebas permitieron comprobar que el programa identifica las entradas invál
 
 **Captura de ejecución:**
 
-[Aquí insertar la captura de pantalla de la consola mostrando todas las pruebas de errores].
+<img width="977" height="250" alt="image" src="https://github.com/user-attachments/assets/b7944dbb-1a7a-4801-b5d0-168aedd82104" />
 
 ---
+---
 
-## Conclusiones
+# 4. Preguntas para reflexionar
 
-- La implementación permitió aplicar el concepto de funciones de orden superior, demostrando que una misma función puede recibir diferentes algoritmos de transformación como parámetros.
-- El uso de `map` permitió realizar las operaciones de cifrado sobre cada carácter del mensaje siguiendo el paradigma de programación funcional.
-- Se comprobó el funcionamiento de los algoritmos César y XOR mediante sus respectivos procesos de cifrado y descifrado, recuperando correctamente los mensajes originales.
-- Finalmente, mediante `Try`, `Success` y `Failure` se implementó un mecanismo de manejo de excepciones que permite identificar mensajes inválidos, claves fuera de rango y caracteres no soportados.
+### 4.1. ¿Por qué el método XOR es su propia función inversa utilizando el mismo operador `^`, mientras que el César requiere invertir el signo de la clave?
+
+El método XOR es su propia función inversa debido a una propiedad de las operaciones lógicas XOR: cuando se aplica dos veces la misma operación utilizando la misma clave, se recupera el valor original.
+
+Esto se debe a que cualquier valor XOR consigo mismo produce cero y cualquier valor XOR con cero permanece igual.
+
+Su representación matemática es:
+
+\[
+(A \oplus B) \oplus B = A
+\]
+
+Por esta razón, en el cifrado XOR solamente es necesario volver a aplicar la misma función con la misma clave para recuperar el mensaje original.
+
+En cambio, el cifrado César utiliza un desplazamiento numérico dentro del alfabeto. Para descifrar un mensaje es necesario realizar el desplazamiento contrario, es decir, si se utilizó una clave positiva de `+3` para cifrar, se debe utilizar una clave de `-3` para recuperar el mensaje original.
+
+### 4.2. ¿Qué ventajas ofrece el uso de `map` sobre un bucle `for` tradicional en este contexto?
+
+La función `map` permite aplicar una transformación a cada elemento de una colección y generar una nueva colección con los resultados obtenidos.
+
+En este proyecto se utilizó para recorrer cada carácter del mensaje y aplicar la función de cifrado correspondiente.
+
+Entre sus principales ventajas se encuentran:
+
+- **Inmutabilidad:** permite generar una nueva cadena transformada sin modificar directamente el mensaje original.
+- **Legibilidad:** permite expresar de manera sencilla la operación que se desea aplicar a cada carácter.
+- **Programación declarativa:** se indica qué transformación debe realizarse sobre los elementos, sin tener que controlar manualmente el recorrido mediante índices o iteraciones.
+- **Reutilización:** permite combinar fácilmente la transformación con diferentes funciones de cifrado, como César y XOR.
+
+Por estas razones, `map` resulta apropiado para este proyecto, ya que facilita la aplicación de transformaciones siguiendo el paradigma de programación funcional.
+
+### 4.3. ¿Cómo ayuda el tipado estático a prevenir errores al pasar funciones como argumentos?
+
+El tipado estático permite comprobar durante la compilación que los datos y las funciones utilizados en el programa cumplan con los tipos establecidos.
+
+En este proyecto, la función `procesarMensaje` recibe como parámetro una función con la siguiente firma:
+
+```scala
+(Char, Int) => Char
+```
+
+Esto significa que la función recibida debe aceptar un carácter (`Char`) y un número entero (`Int`), y devolver otro carácter (`Char`).
+
+Gracias a esta declaración, el compilador puede detectar errores cuando se intenta proporcionar una función con parámetros o valores de retorno incompatibles.
+
+Por ejemplo, tanto `cifradoCesar` como `cifradoXOR` cumplen con esta firma, por lo que pueden utilizarse como argumentos de `procesarMensaje` sin necesidad de modificar su estructura.
+
+De esta manera, el tipado estático proporciona mayor seguridad, facilita la detección temprana de errores y permite trabajar con funciones de orden superior de forma organizada y confiable.
+
+---
