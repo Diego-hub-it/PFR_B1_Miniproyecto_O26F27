@@ -185,9 +185,7 @@ Esto se debe a que cualquier valor XOR consigo mismo produce cero y cualquier va
 
 Su representación matemática es:
 
-\[
-(A \oplus B) \oplus B = A
-\]
+<img width="222" height="77" alt="image" src="https://github.com/user-attachments/assets/884fe09a-80cb-4991-8632-c8aff1fe8d15" />
 
 Por esta razón, en el cifrado XOR solamente es necesario volver a aplicar la misma función con la misma clave para recuperar el mensaje original.
 
